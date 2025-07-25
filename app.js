@@ -55,7 +55,7 @@ store.on("error", () => {
 });
 const sessionOptions = {
   store,
-  secret:process.env.SECRET,
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -88,7 +88,7 @@ app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
 app.get("/", (req, res) => {
-  res.send("✅ API is working fine. Welcome to WanderLust backend!");
+  res.redirect("/listings");
 });
 app.use((err, req, res, next) => {
   const { statusCode = 500, message = "Something went wrong!" } = err;
