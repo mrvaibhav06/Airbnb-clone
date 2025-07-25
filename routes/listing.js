@@ -19,7 +19,7 @@ router
     wrapAsync(listingController.createListing)
   );
 
-router.get("/new", isLoggedIn, listingController.renderNewForm);
+router.get("/new", isLoggedIn, wrapeAsync(listingController.renderNewForm));
 
 //show route
 router
